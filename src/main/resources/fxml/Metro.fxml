@@ -1,7 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.metroparis.MetroController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="341.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.metroparis.MetroController">
+   <top>
+      <Label text="MetroParis - Ricerca Percorsi" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="137.0" prefWidth="413.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.20001220703125" minWidth="10.0" prefWidth="92.5999755859375" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.5999755859375" minWidth="10.0" prefWidth="273.4000244140625" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="24.000006103515624" minHeight="10.0" prefHeight="24.000006103515624" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.60001029968262" minHeight="10.0" prefHeight="16.79999389648438" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="cmbPartenza" prefWidth="150.0" promptText="Seleziona..." GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="cmbArrivo" prefWidth="150.0" promptText="Seleziona..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Label text="Partenza">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Arrivo" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="btnCerca" mnemonicParsing="false" onAction="#doCerca" prefHeight="46.0" prefWidth="109.0" text="Ricerca Percorsi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <TableView fx:id="tbPercorso" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="colFermata" prefWidth="365.5999816894531" text="Fermata" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </TableView>
+            <TextArea fx:id="txtResult" editable="false" prefHeight="100.0" prefWidth="343.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
